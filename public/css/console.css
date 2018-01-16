@@ -1,0 +1,43 @@
+.bash,
+.staticBash {
+    color: magenta;
+}
+
+.command,
+.staticCommand,
+.commandInput,
+.staticCommandInput {
+    display: inline-block;
+    color: green;
+}
+
+.commandInput {
+    text-decoration: none;
+    background: none;
+    border: none;
+    box-shadow: none !important;
+    transition: none !important;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+.command {
+    color: green;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.staticBash,
+.staticCommand {
+    float: left;
+}
+
+.gitConsole
+{
+    background: black;
+}

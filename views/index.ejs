@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script type="text/javascript" src="/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/console.css">
+    <script src="/scripts/console.js"></script>
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/fileexplorer_treeview.js"></script>
+</head>
+<body>
+<!----------------------------------------------------- -->
+<nav class="navbar navbar-primary">
+        <div class="navbar-header">
+            <table class="navbarImageTable">
+                <tr>
+                    <td>
+                        <img src="/images/free-code-camp-logo.svg" width="50px" height="50px" class="navbarImage" />
+                    </td>
+                    <td>
+                        <span class="glyphicon glyphicon-heart"></span>
+                    </td>
+                    <td>
+                        <img src="/images/Octocat.png" width="55px" height="50px" class="navbarImage" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="navbar-brand">FreeCodeCamp</div>
+        <ul class="nav navbar-nav">
+            <li>
+                <div class="sessionButton">
+                    <% if (user) { %>
+                        <li>
+                            <a href="/auth/logout" class="sessionButtonLogin">Log out</a>
+                        </li>
+                        <% } else { %>
+                            <li>
+                                <a href="/auth/login" class="sessionButtonLogin">Login</a>
+                            </li>
+                        <% } %>
+                </div>
+            </li>
+            <li>
+                <div id="roadMap" onclick="openNav()">&#9776; Map</div>
+            </li>
+        </ul>
+</nav>
+<!----------------------------------------------------- -->
+    <div class="container-fluid text-center">  
+        <div id="sidePopNavBar" class="sidePopNavBar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;">&times;</a>
+        </div>
+        <div class="row content">
+            <div class="col-sm-4 sidenav">
+                <!--The Git Graph will go here-->
+                <div id="folderStructure">
+                    <div id="remoteRepo" class="well"></div>
+                </div>
+            </div>
+            <div class="col-sm-6 text-left" id="console-description-container">
+                <div  id="descriptionText">
+                    <p>
+                    <!--Description-->
+                    <h1></h1>
+                    <!--Description text-->
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+                    culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <hr>
+                
+            </div>
+            <!--
+            <div class="col-sm-2 sidenav well" id="roadMap">
+            </div>
+            -->
+            <div id="localRepo" class="col-sm-2 sidenav well">
+                <!--CODE FOR LOCAL REPOSITORY---->
+                <ul class="file-tree">
+                    <li>
+                        <a href="#">US</a>
+                        <ul>
+                            <li>
+                                <a href="#">New York</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">Corporation</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#link5">Link 5</a>
+                                            </li>
+                                            <li>
+                                                <a href="#link6">Link 6</a>
+                                            </li>
+                                            <li>
+                                                <a href="#link7">Link 7</a>
+                                            </li>
+                                            <li>
+                                                <a href="#link8">Link 8</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Deeper</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Link 1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Link 2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Link 3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Link 4</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">LLC</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#link5">Link 5</a>
+                                            </li>
+                                            <li>
+                                                <a href="#link6">Link 6</a>
+                                            </li>
+                                            <li>
+                                                <a href="#link7">Link 7</a>
+                                            </li>
+                                            <li>
+                                                <a href="#link8">Link 8</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Deeper</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Link 1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Link 2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Link 3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Link 4</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#link2">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#link3">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#link4">Link 4</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Canada</a>
+                        <ul>
+                            <li>
+                                <a href="#">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#">Link 4</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <footer class="footer text-center">
+        <div class="slide text-left">
+            <div class="gitConsole" id="gitConsole">
+                <div id="nonstaticBody"></div>
+                <div id="staticBody"></div>
+            </div>
+        </div>
+        <span id="gitConsoleButton"> Git Console </span>
+    </footer>
+</body>
+<script>
+    $(document).ready(function () {
+        $(".file-tree").filetree();
+    });
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+            '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+</html>
